@@ -1,9 +1,15 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
-<p>name: <%= @fullname %></p>
+
+<%= render 'tickers/ticker', :collection => @tickers %>
+
+<!--
+<p>fullname1: <%= @fullname1 %></p>
+<p>fullname2: <%= @fullname2 %></p>
 <p>name: <%= @name %></p>
-<p>name: <%= @index %></p>
-<p>name: <%= @date %></p>
-<p>name: <%= @time %></p>
-<p>name: <%= @change %></p>
-<p>name: <%= @pchange %></p>
+<p>index: <%= @index %></p>
+<p>date: <%= @date %></p>
+<p>time: <%= @time %></p>
+<p>change: <%= @change %></p>
+<p>%change: <%= @pchange %></p>
+-->
