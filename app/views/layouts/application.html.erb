@@ -2,13 +2,19 @@
 <html>
 <head>
   <title>Finance1</title>
-  <%= stylesheet_link_tag :all %>
+  
+  <%= stylesheet_link_tag 'jquery.mobile' %>
+  
   <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag 'jquery.mobile' %>
+  
   <%= csrf_meta_tag %>
 </head>
 <body>
 
-<%= yield %>
+<div data-role="page">
+	<%= yield %>
+</div><!-- /page -->
 
 </body>
 </html>

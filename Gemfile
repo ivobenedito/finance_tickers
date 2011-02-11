@@ -6,6 +6,8 @@ group :development, :test do
 	gem 'sqlite3-ruby', :require => 'sqlite3'
 end
 
+gem 'jquery-rails'
+
 #gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'
 
 # Bundle edge Rails instead:

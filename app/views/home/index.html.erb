@@ -1,15 +1,14 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
 
-<%= render :partial => 'tickers/ticker', :collection => @tickers %>
+<div data-role="header">
+	<h1>Stock Market Quotes</h1>
+</div><!-- /header -->
 
-<!--
-<p>fullname1: <%= @fullname1 %></p>
-<p>fullname2: <%= @fullname2 %></p>
-<p>name: <%= @name %></p>
-<p>index: <%= @index %></p>
-<p>date: <%= @date %></p>
-<p>time: <%= @time %></p>
-<p>change: <%= @change %></p>
-<p>%change: <%= @pchange %></p>
--->
+<div data-role="content">
+	<ul data-role="listview">
+		<%= render :partial => 'tickers/ticker', :collection => @tickers %>
+	</ul>
+</div><!-- /content -->
+
+<div data-role="footer">
+	<h4>(c) Sonae Sierra 2011</h4>
+</div><!-- /footer -->
