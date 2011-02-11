@@ -14,7 +14,7 @@
 		<% else %>
 			<image src="/images/chart-bar-down.png" class="ul-li-icon">
 		<% end %>
-		<h3 class="ul-li-heading"><a href="index.html"><%= ticker[:fullname1] %></a></h3>
+		<h3 class="ul-li-heading"><%= link_to ticker[:fullname1], ticker_path(ticker[:id]) %></h3>
 		<p class="ul-li-desc"><%= ticker[:fullname2] %></p>
 		<p class="ul-li-aside"><%= ticker[:change] %> (<%= ticker[:pchange] %>)</p>
 	</div>
