@@ -11,9 +11,10 @@ class HomeController < ApplicationController
   	
   	ttickers.each do |ticker|
   		params = {:s => ticker.code, :f => ticker.format}	
-  		fullname1, fullname2, name, index, date, time, change, pchange = Net::HTTP.post_form(app_uri, params).body.chomp.split(',')
-  		ticker_response = { :fullname1 => fullname1, :fullname2 => fullname2, :name => name, 
-  			:index => index, :date => date, :time => time, :change => change, :pchange => pchange }
+  		fullname1, name, index, date, time, change, pchange = Net::HTTP.post_form(app_uri, params).body.chomp.split(',')
+  		ticker_response = { :fullname1 => fullname1.gsub('"',''),
+  			:name => name.gsub('"',''), :index => index.gsub('"',''), :date => date.gsub('"',''),
+  			:time => time.gsub('"',''), :change => change.gsub('"',''), :pchange => pchange.gsub('"','') }
   		@tickers.push(ticker_response)
   	end
   end

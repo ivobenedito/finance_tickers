@@ -8,9 +8,14 @@
 <p>% Change: <%= ticker[:pchange] %></p>
 -->
 <li>
-	<image src="/images/chart-down-color.png" class="ul-li-icon">
-	<a href="index.html">FORD</a>
-	<h3 class="ul-li-heading"><%= ticker[:fullname1] %></h3>
-	<p class="ul-li-desc"><%= ticker[:fullname2] %></p>
-	<p class="ul-li-aside"><%= ticker[:change] %></p>
+	<div class="ui-btn-text">
+		<% if ticker[:change].include? '+' %>
+			<image src="/images/chart-bar-up.png" class="ul-li-icon">
+		<% else %>
+			<image src="/images/chart-bar-down.png" class="ul-li-icon">
+		<% end %>
+		<h3 class="ul-li-heading"><a href="index.html"><%= ticker[:fullname1] %></a></h3>
+		<p class="ul-li-desc"><%= ticker[:fullname2] %></p>
+		<p class="ul-li-aside"><%= ticker[:change] %> (<%= ticker[:pchange] %>)</p>
+	</div>
 </li>
