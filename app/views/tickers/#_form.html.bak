@@ -1,7 +1,6 @@
 <%= form_for(@ticker) do |f| %>
-
   <% if @ticker.errors.any? %>
-    <div>
+    <div id="error_explanation">
       <h2><%= pluralize(@ticker.errors.count, "error") %> prohibited this ticker from being saved:</h2>
 
       <ul>
@@ -12,16 +11,15 @@
     </div>
   <% end %>
 
-  <div data-role="fieldcontain">
-    <%= f.label :code %>
+  <div class="field">
+    <%= f.label :code %><br />
     <%= f.text_field :code %>
   </div>
-  
-  <div data-role="fieldcontain">
-    <%= f.label :format %>
+  <div class="field">
+    <%= f.label :format %><br />
     <%= f.text_field :format %>
   </div>
-  
-	<%= f.submit %>
-  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

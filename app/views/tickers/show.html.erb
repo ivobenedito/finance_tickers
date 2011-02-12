@@ -1,15 +1,18 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Code:</b>
-  <%= @ticker.code %>
-</p>
+<div data-role="header">
+	<%= link_to 'Home', root_path, 'data-icon' => 'home' %>
+	<h1>Company info</h1>
+	<%= link_to 'Edit', edit_ticker_path(@ticker), 'data-icon' => 'check' %>
+</div><!-- /header -->
 
-<p>
-  <b>Format:</b>
-  <%= @ticker.format %>
-</p>
+<div data-role="content">
+	<blockquote><%= notice %></blockquote>
+	
+	<p>Company code: <strong><%= @ticker.code %></strong></p>
+	<p>Content format: <strong><%= @ticker.format %></strong></p>
 
+</div><!-- /content -->
 
-<%= link_to 'Edit', edit_ticker_path(@ticker) %> |
-<%= link_to 'Back', tickers_path %>
+<div data-role="footer">
+	<h4>(c) Sonae Sierra 2011</h4>
+</div><!-- /footer -->
