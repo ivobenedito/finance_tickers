@@ -1,13 +1,12 @@
 
 <div data-role="header" data-backbtn="false">
-	<h1>Stock Market Quotes</h1>
-	<%= link_to 'New', new_ticker_path, :class => 'ui-btn-right', 'data-icon' => 'add' %>
+	<%= link_to 'Refresh', root_path, 'data-icon' => 'refresh' %>
+	<h4>Stock Market Quotes</h4>
+	<%= link_to 'New', new_ticker_path, 'data-icon' => 'add' %>
 </div><!-- /header -->
 
 <div data-role="content">
-	
-	<p>Sonae Sierra Brasil vs Competitors vs Index</p>
-	
+	<h2>Sonae Sierra Brasil vs Competitors vs Index</h2>
 	<ul data-role="listview" data-inset="true">
 		<%= render :partial => 'tickers/ticker', :collection => @tickers %>
 	</ul>
