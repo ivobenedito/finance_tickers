@@ -1,5 +1,7 @@
-<div data-role="header">
-	<h1>Edit Company</h1>
+<div data-role="header" data-b>
+	<%= link_to 'Home', root_path, 'data-icon' => 'home' %>
+	<h1>Company info</h1>
+	<%= link_to 'Delete', @ticker, :confirm => 'Are you sure?', :method => :delete, 'data-icon' => 'delete' %>
 </div><!-- /header -->
 
 <div data-role="content">
