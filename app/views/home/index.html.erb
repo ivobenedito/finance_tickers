@@ -1,17 +1,15 @@
 
 <div data-role="header" data-backbtn="false">
-	<%= link_to 'Refresh', root_path, 'data-icon' => 'refresh' %>
-	<h4>Stock Market Quotes</h4>
-	<%= link_to 'New', new_ticker_path, 'data-icon' => 'add' %>
+	<p>&nbsp;&nbsp;&nbsp;Sierra Brasil vs Competitors vs Index</p>
 </div><!-- /header -->
 
 <div data-role="content">
-	<h2>Sonae Sierra Brasil vs Competitors vs Index</h2>
-	<ul data-role="listview" data-inset="true">
+	<ul data-role="listview" data-split-icon="info" data-split-theme="d">
 		<%= render :partial => 'tickers/ticker', :collection => @tickers %>
 	</ul>
 </div><!-- /content -->
 
-<div data-role="footer">
-	<h4>(c) Sonae Sierra 2011</h4>
+<div data-role="footer" class="ui-bar">
+	<%= link_to 'REFRESH', root_path, 'data-icon' => 'refresh' %>
+	<%= link_to 'NEW COMPANY', new_ticker_path, 'data-icon' => 'plus' %>
 </div><!-- /footer -->

@@ -8,14 +8,25 @@
 <p>% Change: <%= ticker[:pchange] %></p>
 -->
 <li>
-	<div class="ui-btn-text">
-		<% if ticker[:change].include? '+' %>
-			<image src="/images/chart-bar-up.png" class="ul-li-icon">
-		<% else %>
-			<image src="/images/chart-bar-down.png" class="ul-li-icon">
-		<% end %>
-		<h3 class="ul-li-heading"><%= link_to ticker[:fullname1], ticker_path(ticker[:id]) %></h3>
-		<p class="ul-li-desc"><%= ticker[:fullname2] %></p>
-		<p class="ul-li-aside"><%= ticker[:change] %> (<%= ticker[:pchange] %>)</p>
-	</div>
+<% if ticker[:change].include? '+' %>
+	<img src="/images/navigation-up-frame.png" class="ui-li-icon" />
+<!--div style="background: url('/images/navigation-up-frame.png') no-repeat top left; padding-left: 55px;"-->
+<% elsif ticker[:change].include? '-' %>
+	<img src="/images/navigation-down-frame.png" class="ui-li-icon" />
+<!--div style="background: url('/images/navigation-down-frame.png') no-repeat top left; padding-left: 55px;"-->
+<% else %>
+<img src="/images/navigation-right-frame.png" class="ui-li-icon" />
+<!--div style="background: url('/images/navigation-right-frame.png') no-repeat top left; padding-left: 55px;"-->
+<% end %>
+		<!--p class="ul-li-aside"><%= ticker[:change] %> (<%= ticker[:pchange] %>)</p-->
+		
+	<h3 style="margin-left: 15px;"><%= link_to ticker[:name], ticker_path(ticker[:id]) %></h3>
+	<p style="margin-left: 15px;"><%= ticker[:code] %></p>
+	<hr />
+	<h5 style="margin-left: 15px; display: inline;">[ <%= ticker[:value] %> ]</h5>
+	<p style="margin-left: 15px; display: inline;"><strong><%= ticker[:change] %>&nbsp;(<%= ticker[:pchange] %>)</strong></p>
+	<p style="margin-left: 15px; margin-top: 2px;">Volume: <%= ticker[:volume] %></p>
+	
+	<a href="#home">.</a>
+	
 </li>
