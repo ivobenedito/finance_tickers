@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   require 'ostruct'
 	
 	def index
-		ttickers = Ticker.all
+		ttickers = Ticker.order('position ASC')
 		app_uri = URI.parse('http://download.finance.yahoo.com/d/quotes.csv')
   	@tickers = []
   	
