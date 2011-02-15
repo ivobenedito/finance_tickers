@@ -1,32 +1,20 @@
-<!--
-<p>Fullname1: <%= ticker[:fullname1] %></p>
-<p>Fullname2: <%= ticker[:fullname2] %></p>
-<p>Name: <%= ticker[:name] %></p>
-<p>Date: <%= ticker[:date] %></p>
-<p>Time: <%= ticker[:time] %></p>
-<p>Change: <%= ticker[:change] %></p>
-<p>% Change: <%= ticker[:pchange] %></p>
--->
+
 <li>
 	
 <% if ticker[:change].include? '+' %>
 	<img src="/images/navigation-up-frame.png" class="ui-li-icon" />
-<!--div style="background: url('/images/navigation-up-frame.png') no-repeat top left; padding-left: 55px;"-->
 <% elsif ticker[:change].include? '-' %>
 	<img src="/images/navigation-down-frame.png" class="ui-li-icon" />
-<!--div style="background: url('/images/navigation-down-frame.png') no-repeat top left; padding-left: 55px;"-->
 <% else %>
 <img src="/images/navigation-right-frame.png" class="ui-li-icon" />
-<!--div style="background: url('/images/navigation-right-frame.png') no-repeat top left; padding-left: 55px;"-->
 <% end %>
-		<!--p class="ul-li-aside"><%= ticker[:change] %> (<%= ticker[:pchange] %>)</p-->
 		
-	<h3><!--a href="#tickers-links" data-rel="dialog" data-transition="slidedown"-->
+	<h3>
 		&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to ticker[:name], external_links_path(:id => ticker[:id]), 'data-rel' => 'dialog', 'data-transition' => 'slidedown' %>
 	</h3>
 	<p>&nbsp;&nbsp;&nbsp;&nbsp;<%= ticker[:code] %></p>
 	<hr />
-	<h5 style="margin-left: 15px; display: inline;"><%= ticker[:value] %></h5>
+	<h5 style="display: inline;">&nbsp;&nbsp;<%= ticker[:value] %></h5>
 	<p style="display: inline;">&nbsp;&nbsp;<strong><%= ticker[:change] %>&nbsp;(<%= ticker[:pchange] %>)</strong></p>
 	<p style="margin-top: 2px;">&nbsp;&nbsp;Volume: <%= ticker[:volume] %></p>
 	
