@@ -1,15 +1,29 @@
 
-<div data-role="header" data-backbtn="false">
-	<p>&nbsp;&nbsp;&nbsp;Sierra Brasil vs Competitors vs Index</p>
-</div><!-- /header -->
+<div data-role="page" id="tickers-list">
+	<div data-role="header" data-backbtn="false">
+		<p>&nbsp;&nbsp;&nbsp;Sierra Brasil vs Competitors vs Index</p>
+	</div><!-- /header -->
+	
+	<div data-role="content">
+		<ul data-role="listview">
+			<%= render :partial => 'tickers/ticker', :collection => @tickers %>
+		</ul>
+	</div><!-- /content -->
+	
+	<div data-role="footer" class="ui-bar" data-theme="d">
+		<%= link_to 'REFRESH', root_path, 'data-icon' => 'refresh' %>
+		<%= link_to 'NEW COMPANY', new_ticker_path, 'data-icon' => 'plus' %>
+	</div><!-- /footer -->
+</div><!-- /page -->
 
-<div data-role="content">
-	<ul data-role="listview" data-split-icon="info" data-split-theme="d">
-		<%= render :partial => 'tickers/ticker', :collection => @tickers %>
-	</ul>
-</div><!-- /content -->
+<div data-role="page" id="tickers-links">	
+	<div data-role="content">
+		<h3>Company details</h3>
+		<a href="teste123.html" data-role="button" data-theme="b">Yahoo finance</a>
+		<a href="teste123.html" data-role="button" data-theme="b">Bloomberg</a>
+		<a href="teste123.html" data-role="button" data-theme="b">Bovespa</a>
+		<%= link_to 'Cancel', root_path, 'data-role' => 'button', 'data-rel' => 'back', 'data-theme' => 'a' %>
+	</div><!-- /content -->
+</div><!-- /page -->
 
-<div data-role="footer" class="ui-bar" data-theme="e">
-	<%= link_to 'REFRESH', root_path, 'data-icon' => 'refresh' %>
-	<%= link_to 'NEW COMPANY', new_ticker_path, 'data-icon' => 'plus' %>
-</div><!-- /footer -->
+
