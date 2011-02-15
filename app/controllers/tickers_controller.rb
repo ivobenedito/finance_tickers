@@ -1,5 +1,10 @@
 class TickersController < ApplicationController
-  # GET /tickers
+  
+	def external_links
+		@ticker = Ticker.find(params[:id])
+	end
+	
+	# GET /tickers
   # GET /tickers.xml
   def index
     @tickers = Ticker.all

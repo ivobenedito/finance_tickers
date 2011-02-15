@@ -6,6 +6,8 @@ Finance1::Application.routes.draw do
   # first created -> highest priority.
 
 	root :to => "home#index"
+	
+	match 'tickers/:id/external_links' => 'tickers#external_links', :as => 'external_links'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Code</th>
+    <th>Code Bloomberg</th>
     <th>Format</th>
     <th></th>
     <th></th>
@@ -12,6 +13,7 @@
 <% @tickers.each do |ticker| %>
   <tr>
     <td><%= ticker.code %></td>
+    <td><%= ticker.code_bloomberg %></td>
     <td><%= ticker.format %></td>
     <td><%= link_to 'Show', ticker %></td>
     <td><%= link_to 'Edit', edit_ticker_path(ticker) %></td>

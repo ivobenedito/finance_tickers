@@ -10,13 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110210115509) do
+ActiveRecord::Schema.define(:version => 20110215015959) do
 
   create_table "tickers", :force => true do |t|
     t.string   "code"
     t.string   "format"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "code_bloomberg"
   end
 
 end

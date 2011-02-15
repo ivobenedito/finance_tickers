@@ -1,0 +1,12 @@
+
+	<div data-role="content">
+		<h3>Company details</h3>
+		<a href="<%= 'http://www.bloomberg.com/apps/quote?ticker='+@ticker.code_bloomberg %>" data-role="button" data-theme="b">
+			Bloomberg
+		</a>
+		<a href="<%= 'http://finance.yahoo.com/q?s='+@ticker.code %>" data-role="button" data-theme="b">
+			Yahoo! Finance
+		</a>
+		<a href="http://www.bmfbovespa.com.br/Pregao-Online/FormConsultaCotacoes.asp?idLapela=divLapelaCotacao&idPainel=divConteudoCotacao" data-role="button" data-theme="b">Bovespa</a>
+		<%= link_to 'Cancel', root_path, 'data-role' => 'button', 'data-rel' => 'back', 'data-theme' => 'a' %>
+	</div>
