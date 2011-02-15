@@ -1,4 +1,4 @@
 
 $(document).ready(function() {
-	setInterval("location.reload(true)", 15000);
+  setInterval("location.reload(true)", 300000);
 });
