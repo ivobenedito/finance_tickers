@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+  	<th>Position</th>
     <th>Code</th>
     <th>Code Bloomberg</th>
     <th>Format</th>
@@ -12,6 +13,7 @@
 
 <% @tickers.each do |ticker| %>
   <tr>
+		<td><%= ticker.position %></td>
     <td><%= ticker.code %></td>
     <td><%= ticker.code_bloomberg %></td>
     <td><%= ticker.format %></td>
