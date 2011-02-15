@@ -21,13 +21,13 @@
 <% end %>
 		<!--p class="ul-li-aside"><%= ticker[:change] %> (<%= ticker[:pchange] %>)</p-->
 		
-	<h3 style="margin-left: 15px;"><!--a href="#tickers-links" data-rel="dialog" data-transition="slidedown"-->
-		<%= link_to ticker[:name], external_links_path(:id => ticker[:id]), 'data-rel' => 'dialog', 'data-transition' => 'slidedown' %>
+	<h3><!--a href="#tickers-links" data-rel="dialog" data-transition="slidedown"-->
+		&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to ticker[:name], external_links_path(:id => ticker[:id]), 'data-rel' => 'dialog', 'data-transition' => 'slidedown' %>
 	</h3>
-	<p style="margin-left: 15px;"><%= ticker[:code] %></p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;<%= ticker[:code] %></p>
 	<hr />
-	<h5 style="margin-left: 15px; display: inline;">[ <%= ticker[:value] %> ]</h5>
-	<p style="margin-left: 15px; display: inline;"><strong><%= ticker[:change] %>&nbsp;(<%= ticker[:pchange] %>)</strong></p>
-	<p style="margin-left: 15px; margin-top: 2px;">Volume: <%= ticker[:volume] %></p>
+	<h5 style="margin-left: 15px; display: inline;"><%= ticker[:value] %></h5>
+	<p style="display: inline;">&nbsp;&nbsp;<strong><%= ticker[:change] %>&nbsp;(<%= ticker[:pchange] %>)</strong></p>
+	<p style="margin-top: 2px;">&nbsp;&nbsp;Volume: <%= ticker[:volume] %></p>
 	
 </li>
