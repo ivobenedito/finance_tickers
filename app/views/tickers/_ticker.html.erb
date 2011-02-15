@@ -22,7 +22,7 @@
 		<!--p class="ul-li-aside"><%= ticker[:change] %> (<%= ticker[:pchange] %>)</p-->
 		
 	<h3 style="margin-left: 15px;"><!--a href="#tickers-links" data-rel="dialog" data-transition="slidedown"-->
-		<%= link_to ticker[:name], external_links_path(:id => ticker[:id]) %>
+		<%= link_to ticker[:name], external_links_path(:id => ticker[:id]), 'data-rel' => 'dialog', 'data-transition' => 'slidedown' %>
 	</h3>
 	<p style="margin-left: 15px;"><%= ticker[:code] %></p>
 	<hr />
