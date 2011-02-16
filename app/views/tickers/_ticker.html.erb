@@ -1,21 +1,21 @@
 
 <li>
 	
-<% if ticker[:change].include? '+' %>
-	<img src="/images/navigation-up-frame.png" class="ui-li-icon" />
-<% elsif ticker[:change].include? '-' %>
+<% if ticker[:scale] == 'negative' %>
 	<img src="/images/navigation-down-frame.png" class="ui-li-icon" />
+<% elsif ticker[:scale] == 'positive' %>
+	<img src="/images/navigation-up-frame.png" class="ui-li-icon" />
 <% else %>
-<img src="/images/navigation-right-frame.png" class="ui-li-icon" />
+	<img src="/images/navigation-right-frame.png" class="ui-li-icon" />
 <% end %>
 		
 	<h3>
 		&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to ticker[:name], external_links_path(:id => ticker[:id]), 'data-rel' => 'dialog', 'data-transition' => 'slidedown' %>
 	</h3>
-	<p>&nbsp;&nbsp;&nbsp;&nbsp;<%= ticker[:code] %></p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= ticker[:code] %></p>
 	<hr />
 	<h5 style="display: inline;">&nbsp;&nbsp;<%= ticker[:value] %></h5>
-	<p style="display: inline;">&nbsp;&nbsp;<strong><%= ticker[:change] %>&nbsp;(<%= ticker[:pchange] %>)</strong></p>
+	<p class="scale-<%= ticker[:scale] %>" style="display: inline;">&nbsp;&nbsp;<strong><%= ticker[:change] %>&nbsp;(<%= ticker[:pchange] %>)</strong></p>
 	<p style="margin-top: 2px;">&nbsp;&nbsp;Volume: <%= ticker[:volume] %></p>
 	
 </li>
